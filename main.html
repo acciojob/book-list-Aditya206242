@@ -1,16 +1,58 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <title>MyBookList</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+  <div class="container">
+    <header>
+      <h1>My<span>Book</span>List</h1>
+    </header>
 
+    <div class="card">
+      <form id="book-form" class="form-group" autocomplete="off">
+        <div class="form-row">
+          <div style="flex:1; min-width:160px;">
+            <label for="title">Title</label>
+            <input id="title" type="text" placeholder="Book title" />
+          </div>
+
+          <div style="flex:1; min-width:160px;">
+            <label for="author">Author</label>
+            <input id="author" type="text" placeholder="Author name" />
+          </div>
+
+          <div style="flex:0 0 120px; min-width:100px;">
+            <label for="isbn">ISBN#</label>
+            <input id="isbn" type="text" placeholder="ISBN" />
+          </div>
+        </div>
+
+        <button id="submit" type="submit">Add Book</button>
+        <div id="msg" class="msg" aria-live="polite" style="display:none;"></div>
+      </form>
+    </div>
+
+    <div class="card">
+      <table class="table table-striped" aria-describedby="book list">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN#</th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody id="book-list">
+          <!-- rows added dynamically -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
